@@ -142,22 +142,22 @@ NRproject.sh (main script)
 	whoami
 	hostname -I
 	echo "Start Nipe to go anonymous!" 
-}```
+}
 
 # Step 2. start nipe
 
-```function startnipe ()
+function startnipe ()
 {
 	echo "Starting nipe.. Hang on.."
 	cd /home/hairkal/nipe
 	sudo perl nipe.pl start
 	active=$(sudo perl nipe.pl status | grep activated | awk '{print $3}')
 	echo "Nipe is $active" 
-}```
+}
 
 # Step 3 & 4. User wants to ensure that user is Anonymous. Echo location 
 
-```function anonchecker ()
+function anonchecker ()
 {
 	echo "Checking if you are Anonymous.."
 	cd /home/hairkal/nipe
@@ -174,11 +174,11 @@ if [ ! -z "$stat_check" ]
 	else
 		echo "You are Expose!! Restart before you proceed.. " 	
 fi
-}```
+}
 
 # Step 5 & 6. Run nmap/whois. echo the answer 
 
-```function options ()  
+function options ()  
 {
 	read -p "Would you like to A) NMAP? or B) WHOIS? : " choose
 case $choose in
@@ -230,9 +230,9 @@ options
         C)
                 exit
         esac
-}```
+}
 
-```iam
+iam
 startnipe
 anonchecker
 options```
